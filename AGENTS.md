@@ -2,7 +2,11 @@
 
 ## Project
 
+<<<<<<< HEAD
 Vanilla JS Asteroids clone — single file `game.js` (423 lines), no dependencies, no build system.
+=======
+Vanilla JS Asteroids clone — single file `game.js` (542 lines), no dependencies, no build system.
+>>>>>>> powerup-velocidad
 
 ## Run
 
@@ -21,7 +25,11 @@ Or open `index.html` directly in a browser.
 ## Conventions
 
 - Strict mode (`'use strict'` at top)
+<<<<<<< HEAD
 - ES6 classes: `Ship`, `Asteroid`, `Bullet`, `Particle`
+=======
+- ES6 classes: `Ship`, `Asteroid`, `Bullet`, `Particle`, `PowerUp`
+>>>>>>> powerup-velocidad
 - Constants at top of file: `RADII`, `SPEEDS`, `POINTS` arrays indexed by asteroid size (1=small, 2=medium, 3=large)
 - Game state: `state` variable holds `'playing' | 'dead' | 'gameover'`
 - All coordinates wrap via `wrap()` helper (toroidal space)
@@ -34,3 +42,14 @@ Or open `index.html` directly in a browser.
 - Ship invincibility lasts 3 seconds after respawn (blinks at 8Hz)
 - Asteroid split: size 3→2×size 2, size 2→2×size 1, size 1→destroyed
 - Safe spawn distance from center: 130px
+<<<<<<< HEAD
+=======
+
+## Power-ups (Speed Boost)
+
+- **Spawn**: 15% chance from medium/large asteroids + random every 12s (max 2 on screen)
+- **Effect**: THRUST x2 for 5 seconds (260→520 px/s²)
+- **Visual**: Cyan diamond with lightning bolt, propulsor turns cyan, HUD shows "SPEED Xs"
+- **Pickup**: Ship collision with PowerUp radius (10px)
+- **Timer**: `ship.speedTimer` counts down in `update()`, resets on death
+>>>>>>> powerup-velocidad
