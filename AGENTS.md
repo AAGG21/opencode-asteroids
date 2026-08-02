@@ -2,11 +2,7 @@
 
 ## Project
 
-<<<<<<< HEAD
-Vanilla JS Asteroids clone — single file `game.js` (423 lines), no dependencies, no build system.
-=======
-Vanilla JS Asteroids clone — single file `game.js` (542 lines), no dependencies, no build system.
->>>>>>> powerup-velocidad
+Vanilla JS Asteroids clone — single file `game.js` (672 lines), no dependencies, no build system.
 
 ## Run
 
@@ -25,11 +21,7 @@ Or open `index.html` directly in a browser.
 ## Conventions
 
 - Strict mode (`'use strict'` at top)
-<<<<<<< HEAD
-- ES6 classes: `Ship`, `Asteroid`, `Bullet`, `Particle`
-=======
-- ES6 classes: `Ship`, `Asteroid`, `Bullet`, `Particle`, `PowerUp`
->>>>>>> powerup-velocidad
+- ES6 classes: `Ship`, `Asteroid`, `Bullet`, `Particle`, `PowerUp`, `ShootingStar`
 - Constants at top of file: `RADII`, `SPEEDS`, `POINTS` arrays indexed by asteroid size (1=small, 2=medium, 3=large)
 - Game state: `state` variable holds `'playing' | 'dead' | 'gameover'`
 - All coordinates wrap via `wrap()` helper (toroidal space)
@@ -42,8 +34,6 @@ Or open `index.html` directly in a browser.
 - Ship invincibility lasts 3 seconds after respawn (blinks at 8Hz)
 - Asteroid split: size 3→2×size 2, size 2→2×size 1, size 1→destroyed
 - Safe spawn distance from center: 130px
-<<<<<<< HEAD
-=======
 
 ## Power-ups (Speed Boost)
 
@@ -52,4 +42,14 @@ Or open `index.html` directly in a browser.
 - **Visual**: Cyan diamond with lightning bolt, propulsor turns cyan, HUD shows "SPEED Xs"
 - **Pickup**: Ship collision with PowerUp radius (10px)
 - **Timer**: `ship.speedTimer` counts down in `update()`, resets on death
->>>>>>> powerup-velocidad
+
+## Shooting Star (Estrella Fugaz)
+
+- **Spawn**: Every 20s from random screen edge (max 1 on screen)
+- **Speed**: 250-300 px/s (3-5x faster than asteroids)
+- **TTL**: 6 seconds, fades in last 1.5s
+- **Points**: 250 when destroyed by bullet
+- **Visual**: Yellow/white core with glowing trail effect
+- **HUD**: Shows "* SHOOTING STAR *" when active
+- **Collision**: Kills ship on contact (same as asteroids)
+- **State**: Updates during `dead` state too
